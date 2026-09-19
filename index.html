@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MIAA HUT | Fast Food Restaurant</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="header">
+
+        <nav class="navbar">
+
+            <a href="#home" class="logo">
+                🍕 MIAA <span>HUT</span>
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#menu">Menu</a>
+                </li>
+
+                <li>
+                    <a href="#offers">Offers</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+            <button class="cart-button" onclick="openCart()">
+                🛒 Cart
+                <span id="cartCount">0</span>
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <p class="hero-small">
+                🔥 FRESH • HOT • DELICIOUS
+            </p>
+
+            <h1>
+                Taste the <span>Crunch.</span>
+                <br>
+                Skip the Wait.
+            </h1>
+
+            <p class="hero-description">
+                Delicious pizzas, juicy burgers, crispy fries
+                and more — freshly prepared just for you.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#menu" class="primary-button">
+                    Order Now 🍕
+                </a>
+
+                <a href="#menu" class="outline-button">
+                    View Menu
+                </a>
+
+            </div>
+
+            <div class="hero-features">
+
+                <div>
+                    <strong>⭐ 4.9</strong>
+                    <small>Customer Rating</small>
+                </div>
+
+                <div>
+                    <strong>🍕 20+</strong>
+                    <small>Food Items</small>
+                </div>
+
+                <div>
+                    <strong>⚡ Fast</strong>
+                    <small>Delivery</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <section class="categories">
+
+        <div class="section-heading">
+
+            <p>EXPLORE OUR MENU</p>
+
+            <h2>
+                What are you craving? 🤤
+            </h2>
+
+        </div>
+
+
+        <div class="category-container">
+
+            <div class="category-card">
+                <div class="category-icon">🍕</div>
+                <h3>Pizza</h3>
+                <p>Cheesy & delicious</p>
+            </div>
+
+
+            <div class="category-card">
+                <div class="category-icon">🍔</div>
+                <h3>Burgers</h3>
+                <p>Juicy & tasty</p>
+            </div>
+
+
+            <div class="category-card">
+                <div class="category-icon">🍟</div>
+                <h3>Fries</h3>
+                <p>Crispy & hot</p>
+            </div>
+
+
+            <div class="category-card">
+                <div class="category-icon">🌯</div>
+                <h3>Shawarma</h3>
+                <p>Fresh & flavorful</p>
+            </div>
+
+
+            <div class="category-card">
+                <div class="category-icon">🥤</div>
+                <h3>Drinks</h3>
+                <p>Cool & refreshing</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MENU ================= -->
+
+    <section class="menu-section" id="menu">
+
+        <div class="section-heading">
+
+            <p>OUR SPECIAL MENU</p>
+
+            <h2>
+                Customer Favorites 🔥
+            </h2>
+
+            <span>
+                Made fresh, served hot and loved by everyone.
+            </span>
+
+        </div>
+
+
+        <div class="food-container">
+
+
+            <!-- FOOD CARD 1 -->
+
+            <div class="food-card">
+
+                <div class="food-picture pizza-picture">
+
+                    <span class="food-emoji">🍕</span>
+
+                    <span class="food-badge">
+                        BEST SELLER
+                    </span>
+
+                </div>
+
+                <div class="food-info">
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <h3>
+                        Chicken Tikka Pizza
+                    </h3>
+
+                    <p>
+                        Cheesy pizza topped with spicy chicken
+                        tikka and fresh vegetables.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>
+                            Rs. 899
+                        </strong>
+
+                        <button onclick="addToCart('Chicken Tikka Pizza', 899)">
+                            Add to Cart +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD CARD 2 -->
+
+            <div class="food-card">
+
+                <div class="food-picture burger-picture">
+
+                    <span class="food-emoji">🍔</span>
+
+                    <span class="food-badge">
+                        POPULAR
+                    </span>
+
+                </div>
+
+                <div class="food-info">
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <h3>
+                        MIAA Special Burger
+                    </h3>
+
+                    <p>
+                        Juicy chicken burger with fresh salad,
+                        cheese and our special sauce.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>
+                            Rs. 599
+                        </strong>
+
+                        <button onclick="addToCart('MIAA Special Burger', 599)">
+                            Add to Cart +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD CARD 3 -->
+
+            <div class="food-card">
+
+                <div class="food-picture fries-picture">
+
+                    <span class="food-emoji">🍟</span>
+
+                </div>
+
+                <div class="food-info">
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <h3>
+                        Loaded Cheese Fries
+                    </h3>
+
+                    <p>
+                        Crispy golden fries covered with melted
+                        cheese and special sauce.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>
+                            Rs. 399
+                        </strong>
+
+                        <button onclick="addToCart('Loaded Cheese Fries', 399)">
+                            Add to Cart +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD CARD 4 -->
+
+            <div class="food-card">
+
+                <div class="food-picture shawarma-picture">
+
+                    <span class="food-emoji">🌯</span>
+
+                </div>
+
+                <div class="food-info">
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <h3>
+                        Special Shawarma
+                    </h3>
+
+                    <p>
+                        Tender chicken, fresh vegetables and
+                        creamy garlic sauce.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>
+                            Rs. 449
+                        </strong>
+
+                        <button onclick="addToCart('Special Shawarma', 449)">
+                            Add to Cart +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD CARD 5 -->
+
+            <div class="food-card">
+
+                <div class="food-picture wings-picture">
+
+                    <span class="food-emoji">🍗</span>
+
+                    <span class="food-badge">
+                        NEW
+                    </span>
+
+                </div>
+
+                <div class="food-info">
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <h3>
+                        Crispy Chicken
+                    </h3>
+
+                    <p>
+                        Golden crispy chicken with our
+                        signature spicy coating.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>
+                            Rs. 699
+                        </strong>
+
+                        <button onclick="addToCart('Crispy Chicken', 699)">
+                            Add to Cart +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD CARD 6 -->
+
+            <div class="food-card">
+
+                <div class="food-picture drink-picture">
+
+                    <span class="food-emoji">🥤</span>
+
+                </div>
+
+                <div class="food-info">
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <h3>
+                        Chilled Soft Drink
+                    </h3>
+
+                    <p>
+                        Refreshing chilled drink to complete
+                        your delicious meal.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>
+                            Rs. 199
+                        </strong>
+
+                        <button onclick="addToCart('Chilled Soft Drink', 199)">
+                            Add to Cart +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= OFFER ================= -->
+
+    <section class="offer-section" id="offers">
+
+        <div class="offer-content">
+
+            <p>
+                🔥 LIMITED TIME OFFER
+            </p>
+
+            <h2>
+                Get 20% OFF
+                <br>
+                On Large Pizzas!
+            </h2>
+
+            <span>
+                Use coupon code
+                <strong>MIAA20</strong>
+                at checkout.
+            </span>
+
+            <button onclick="showOffer()">
+                Claim Offer 🎁
+            </button>
+
+        </div>
+
+        <div class="offer-emoji">
+            🍕
+        </div>
+
+    </section>
+
+
+    <!-- ================= WHY US ================= -->
+
+    <section class="why-us">
+
+        <div class="section-heading">
+
+            <p>WHY CHOOSE US?</p>
+
+            <h2>
+                We Make Food Special ❤️
+            </h2>
+
+        </div>
+
+
+        <div class="why-container">
+
+            <div class="why-card">
+
+                <div>🥗</div>
+
+                <h3>
+                    Fresh Ingredients
+                </h3>
+
+                <p>
+                    We use fresh ingredients to prepare
+                    delicious meals.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div>👨‍🍳</div>
+
+                <h3>
+                    Expert Chefs
+                </h3>
+
+                <p>
+                    Our food is prepared with care
+                    and passion.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div>⚡</div>
+
+                <h3>
+                    Fast Service
+                </h3>
+
+                <p>
+                    Fresh food prepared quickly
+                    whenever you are hungry.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <div>❤️</div>
+
+                <h3>
+                    Made With Love
+                </h3>
+
+                <p>
+                    Every order is prepared to make
+                    your day better.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about-section" id="about">
+
+        <div class="about-text">
+
+            <p>
+                ABOUT MIAA HUT
+            </p>
+
+            <h2>
+                Good Food.
+                <span>Good Mood.</span>
+            </h2>
+
+            <p>
+                Welcome to MIAA HUT — your place for delicious,
+                fresh and satisfying fast food. From cheesy pizzas
+                and juicy burgers to crispy fries and refreshing
+                drinks, we prepare everything with quality
+                ingredients and lots of love.
+            </p>
+
+            <a href="#menu" class="primary-button">
+                Explore Menu 🍕
+            </a>
+
+        </div>
+
+
+        <div class="about-box">
+
+            <div>
+                🍕
+            </div>
+
+            <h3>
+                MIAA HUT
+            </h3>
+
+            <p>
+                Fresh • Hot • Delicious
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="contact-section" id="contact">
+
+        <div class="section-heading">
+
+            <p>GET IN TOUCH</p>
+
+            <h2>
+                We'd Love To Hear From You! 📞
+            </h2>
+
+        </div>
+
+
+        <div class="contact-container">
+
+            <div class="contact-card">
+
+                <div>📍</div>
+
+                <h3>
+                    Location
+                </h3>
+
+                <p>
+                    pashawar, Pakistan
+                </p>
+
+            </div>
+            <div class="contact-card">
+
+                <div>📞</div>
+
+                <h3>
+                    Phone
+                </h3>
+
+                <p>
+                    +92 300 1234567
+                </p>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div>✉️</div>
+
+                <h3>
+                    Email
+                </h3>
+
+                <p>
+                    info@miaahut.com
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            🍕 MIAA <span>HUT</span>
+        </div>
+
+        <p>
+            Fresh food. Great taste. Happy customers.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#offers">Offers</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+        <div class="social-icons">
+
+            <span>📷</span>
+            <span>📘</span>
+            <span>💬</span>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 MIAA HUT. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- ================= CART POPUP ================= -->
+
+    <div class="cart-overlay" id="cartOverlay">
+
+        <div class="cart-box">
+
+            <button class="close-cart" onclick="closeCart()">
+                ✕
+            </button>
+
+            <h2>
+                🛒 Your Cart
+            </h2>
+
+            <div id="cartItems">
+
+                <p class="empty-cart">
+                    Your cart is empty.
+                </p>
+
+            </div>
+
+            <div class="cart-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong>
+                    Rs. <span id="cartTotal">0</span>
+                </strong>
+
+            </div>
+
+            <button class="checkout-button" onclick="checkout()">
+                Checkout
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
