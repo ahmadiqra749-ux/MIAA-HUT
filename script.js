@@ -1,13 +1,9 @@
-// ================================
 // MIAA HUT SHOPPING CART
-// ================================
 
 let cart = [];
 
-
-// ADD ITEM TO CART
+// Add item to cart
 function addToCart(name, price) {
-
     cart.push({
         name: name,
         price: price
@@ -18,132 +14,74 @@ function addToCart(name, price) {
     alert(name + " has been added to your cart! 🍕");
 }
 
-
-// UPDATE CART
+// Update cart display
 function updateCart() {
+    const cartCount = document.getElementById("cartCount");
+    const cartItems = document.getElementById("cartItems");
+    const cartTotal = document.getElementById("cartTotal");
 
-    const cartCount =
-        document.getElementById("cartCount");
-
-    const cartItems =
-        document.getElementById("cartItems");
-
-    const cartTotal =
-        document.getElementById("cartTotal");
-
-
-    // Update number of items
-    cartCount.textContent = cart.length;
-
-
-    // Empty cart
-    if (cart.length === 0) {
-
-        cartItems.innerHTML = `
-            <p class="empty-cart">
-                Your cart is empty.
-            </p>
-        `;
-
-        cartTotal.textContent = "0";
-
+    if (!cartCount || !cartItems || !cartTotal) {
+        console.log("Cart elements not found");
         return;
     }
 
+    cartCount.textContent = cart.length;
 
-    let total = 0;
+    if (cart.length === 0) {
+        cartItems.innerHTML =
+            '<p class="empty-cart">Your cart is empty.</p>';
+
+        cartTotal.textContent = "0";
+        return;
+    }
 
     cartItems.innerHTML = "";
 
+    let total = 0;
 
-    // Show cart items
-    cart.forEach(function(item, index) {
-
+    cart.forEach((item) => {
         total += item.price;
 
+        const itemElement = document.createElement("p");
+        itemElement.textContent =
+            `${item.name} - Rs. ${item.price}`;
 
-        cartItems.innerHTML += `
-
-            <div class="cart-item">
-
-                <span>
-                    ${item.name}
-                </span>
-
-                <strong>
-                    Rs. ${item.price}
-                </strong>
-
-            </div>
-
-        `;
-
+        cartItems.appendChild(itemElement);
     });
 
-
-    // Show total
     cartTotal.textContent = total;
 }
 
-
-// OPEN CART
+// Open cart popup
 function openCart() {
-
-    document.getElementById(
-        "cartOverlay"
-    ).style.display = "flex";
-
+    document.getElementById("cartOverlay").style.display = "flex";
 }
 
-
-// CLOSE CART
+// Close cart popup
 function closeCart() {
-
-    document.getElementById(
-        "cartOverlay"
-    ).style.display = "none";
-
+    document.getElementById("cartOverlay").style.display = "none";
 }
 
-
-// OFFER BUTTON
-function showOffer() {
-
-    alert(
-        "🎉 MIAA HUT SPECIAL OFFER!\n\n" +
-        "You can get 20% OFF on large pizzas.\n\n" +
-        "Use code: MIAA20"
-    );
-
-}
-
-
-// CHECKOUT
+// Checkout
 function checkout() {
-
     if (cart.length === 0) {
-
-        alert(
-            "Your cart is empty! 🍕\n\n" +
-            "Please add some delicious food first."
-        );
-
+        alert("Your cart is empty!");
         return;
     }
 
+    alert("Order placed successfully! 🎉");
 
-    let total = cart.reduce(
-        function(sum, item) {
-            return sum + item.price;
-        },
-        0
-    );
-
-
-    alert(
-        "Thank you for ordering from MIAA HUT! ❤️\n\n" +
-        "Your total is Rs. " + total +
-        "\n\nCheckout/payment can be connected later."
-    );
-
+    cart = [];
+    updateCart();
+    closeCart();
 }
+
+// Offer button
+function showOffer() {
+    alert("🎁 Coupon Code: MIAA20");
+}
+
+// Run when page loads
+window.onload = function () {
+    updateCart();
+};
