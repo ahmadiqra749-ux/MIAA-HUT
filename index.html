@@ -771,14 +771,43 @@
                 </strong>
 
             </div>
+           <div class="cart-total">
+    <span>Total</span>
+    <strong>Rs. <span id="cartTotal">0</span></strong>
+</div>
 
-            <button class="checkout-button" onclick="checkout()">
-                Checkout
-            </button>
+<!-- CUSTOMER FORM START -->
+<div 
+class="customer-form">
+
+    <input
+        type="text"
+        id="customerName"
+        placeholder="Enter Your Name">
+
+    <input
+        type="text"
+        id="customerPhone"
+        placeholder="Enter Phone Number">
+
+    <textarea
+        id="customerAddress"
+        placeholder="Enter Delivery Address"></textarea>
+
+    <button
+        class="whatsapp-btn"
+        onclick="sendWhatsAppOrder()">
+        📱 Order on WhatsApp
+    </button>
+
+</div>
+<!-- CUSTOMER FORM END -->
+
+<button class="checkout-button" onclick="checkout()">
+    Checkout
+</button>
 
         </div>
-
-    </div>
 
 
   <!-- Make sure script.js is imported here -->

@@ -84,4 +84,62 @@ function showOffer() {
 // Run when page loads
 window.onload = function () {
     updateCart();
+    function openProduct(type){
+
+    const modal = document.getElementById("productModal");
+    const title = document.getElementById("modalTitle");
+    const items = document.getElementById("modalItems");
+
+    items.innerHTML = "";
+
+    let products = [];
+
+    if(type === "burger"){
+        title.innerText = "Burger Menu";
+
+        products = [
+            {name:"Chicken Burger", price:499},
+            {name:"Zinger Burger", price:599},
+            {name:"Cheese Burger", price:549},
+            {name:"Beef Burger", price:699}
+        ];
+    }
+
+    if(type === "pizza"){
+        title.innerText = "Pizza Menu";
+
+        products = [
+            {name:"Small Pizza", price:599},
+            {name:"Medium Pizza", price:899},
+            {name:"Large Pizza", price:1299}
+        ];
+    }
+
+    if(type === "fries"){
+        title.innerText = "Fries Menu";
+
+        products = [
+            {name:"Regular Fries", price:199},
+            {name:"Loaded Fries", price:399},
+            {name:"BBQ Fries", price:449}
+        ];
+    }
+
+    products.forEach(product => {
+        items.innerHTML += `
+            <div class="modal-item">
+                <span>${product.name} - Rs.${product.price}</span>
+                <button onclick="addToCart('${product.name}', ${product.price})">
+                    Add
+                </button>
+            </div>
+        `;
+    });
+
+    modal.style.display = "block";
+}
+
+function closeModal(){
+    document.getElementById("productModal").style.display = "none";
+}
 };
